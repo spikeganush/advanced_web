@@ -1,3 +1,22 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "test_website";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM variable";
+$result = $conn->query($sql);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,21 +28,30 @@
 </head>
 <body>
 
-<?php
-//create a variable
-$your_name = "Florian Jourdain";
-$index = "Home";
-?>
+
     <div class="title">
         <h1>Hello world</h1>
         <!-- Print the variable -->
-        <p>Your name is: <?php echo $your_name;?></p>
+
+        <?php
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+              
+              echo "<p>Your name is:  "  . $row["first_name"]. " " . $row["last_name"]. ", you are " . $row["age"]. " years old.</p>";
+            }
+          } else {
+            echo "0 results";
+          }
+
+
+        ?>        
     </div>
     
    <div class="date">
        <h1></h1>
        <ul>
-           <li class="link_nav"><a href="index.html"><?php echo $index;?></a></li>
+           <li class="link_nav"><a href="index.html">Home</a></li>
            <li class="link_nav"><a href="contact.html">Contact</a></li>
            <li class="link_nav"><a href="about.html">About</a></li>
        </ul>

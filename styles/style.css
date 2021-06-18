@@ -1,12 +1,16 @@
 body {
     margin: 0;
-    
+    padding: 0;
 }
 
 .title {
     background-color: black;
     color: white;
     text-align: center;
+}
+
+.title h1 {
+    margin: 0;
 }
 
 .date li a {
