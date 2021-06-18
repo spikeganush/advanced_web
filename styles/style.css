@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    
+}
+
+.title {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.date li a {
+    text-decoration: none;
+    color: black;
+}
+
+.date ul {
+    display: flex;
+    list-style: none;    
+}
+
+.date li {
+    margin: 0 1em;
+}
