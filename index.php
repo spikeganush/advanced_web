@@ -16,7 +16,7 @@ $index = "Home";
 ?>
     <div class="title">
         <h1>Hello world</h1>
-        
+        <!-- Print the variable -->
         <p>Your name is: <?php echo $your_name;?></p>
     </div>
     
